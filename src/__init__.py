@@ -1,5 +1,5 @@
 # TODO: Use OOP to finish the Fuzzy Control Project.
 __all__ = [
-    'fuzzy_controler',
+    'Fuzzy_PID',
     'PID'
 ]
