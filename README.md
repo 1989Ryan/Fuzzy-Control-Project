@@ -10,7 +10,7 @@ Classic PID Controler and Fuzzy PID controler.
 
 ## Structure
 
-'''
+···
 /src
     __init__.py
     Fuzzy_PID.py
@@ -23,4 +23,4 @@ Classic PID Controler and Fuzzy PID controler.
 LICENSE
 README.md
 .gitignore
-'''
+···
