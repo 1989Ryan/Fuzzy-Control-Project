@@ -2,6 +2,10 @@
 
 Classic PID Controler and Fuzzy PID controler.
 
+## Demo
+
+![Demo](demo.gif)
+
 ## Prerequisite
 
 * Python 3.6.8
