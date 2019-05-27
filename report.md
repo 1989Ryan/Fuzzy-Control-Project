@@ -60,7 +60,7 @@ $$
 具有模糊增益调整的PID控制器可以由下图的结构来表示。
 
 <center>
-    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master.png?raw=trueFUZZYPID.png' width = "75%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/FUZZYPID.png?raw=true' width = "75%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图3. 具有模糊增益调整的PID控制器</div>
 </center>
 
@@ -543,5 +543,5 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNjQyMDA1NV19
+eyJoaXN0b3J5IjpbLTE0NDI2MDA2MTldfQ==
 -->
