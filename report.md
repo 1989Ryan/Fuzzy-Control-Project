@@ -219,7 +219,9 @@ $$
 |:-----------------:|:--------------:|:--------------:|:-----:|:----:|
 |      经典PID      |     21.12%     |      7.56s      | 1.876 | 6.87 |
 | 模糊控制自适应PID |      6.35%     |      5.11s      | 1.095 | 3.11 |
-</br><div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">表1. 控制系统性能对比</div>
+</center></br>
+<center>
+<div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">表1. 控制系统性能对比</div>
 </center>
 
 ### 实验分析与结论
@@ -573,7 +575,7 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTM4NzQ2MjMsLTQ4NjA2NDMzMiwxNj
-E5NjY1OTU0LC0xMjkyMjM4MDAyLC04ODE5MTQxMjcsODIxMTI2
-ODE2XX0=
+eyJoaXN0b3J5IjpbLTgzOTk2Mzc3MiwtNDg2MDY0MzMyLDE2MT
+k2NjU5NTQsLTEyOTIyMzgwMDIsLTg4MTkxNDEyNyw4MjExMjY4
+MTZdfQ==
 -->
