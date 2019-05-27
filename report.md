@@ -18,7 +18,7 @@
 
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/%E5%80%92%E7%AB%8B%E6%91%86.jpg?raw=true' width = "50%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">fig1. 倒立摆模型</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图1. 倒立摆模型</div>
 </center>
 
 使用前向欧拉方法计算新的角度和角速度来更新观测。
@@ -35,7 +35,7 @@ $$
 简单的传统PID控制器可以用下图来表示。
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/pid_control.png?raw=true' width = "75%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">fig1. PID流程图</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图2. PID流程图</div>
 </center>
 
 其中，误差可以用下面的公式表示。
@@ -93,7 +93,7 @@ $$
 $e(k)$和$\Delta e(k)$的隶属函数如下图所示。
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/membership1.png?raw=true' width = "40%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/membership2.png?raw=true" width = "40%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图4. 状态的模糊集合隶属度分布</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 状态的模糊集合隶属度分布</div>
 </center>
 我们确定了一系列准则，来保证pid控制算法的精确运行。准则可以由以下矩阵进行确定。
 
@@ -189,7 +189,7 @@ $$
 
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/PID_result.png?raw=true' width = "75%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的经典PID控制结果,横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图6. 十次实验的经典PID控制结果,横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
 
@@ -199,7 +199,7 @@ $$
 
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/fuzzy_pid_result.png?raw=true' width = "75%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图6. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图7. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
 ### 性能对比
@@ -209,7 +209,7 @@ $$
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare3.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare4.png?raw=true" width = "45%"></br>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare5.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare6.png?raw=true" width = "45%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图7. 对比实验控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图8. 对比实验控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
 我们对实验的最大超调百分比、到达稳态时间，IAE和ISE进行了对比，如下表所示。
@@ -578,7 +578,7 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0ODE3MzQxOSw2MjE3OTY4NDksOTI2ND
-YxODM3LC00ODYwNjQzMzIsMTYxOTY2NTk1NCwtMTI5MjIzODAw
-MiwtODgxOTE0MTI3LDgyMTEyNjgxNl19
+eyJoaXN0b3J5IjpbMTAzMjM2MjE5NCwtNTQ4MTczNDE5LDYyMT
+c5Njg0OSw5MjY0NjE4MzcsLTQ4NjA2NDMzMiwxNjE5NjY1OTU0
+LC0xMjkyMjM4MDAyLC04ODE5MTQxMjcsODIxMTI2ODE2XX0=
 -->
