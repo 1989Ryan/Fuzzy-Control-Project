@@ -204,6 +204,14 @@ $$
 
 ### 性能对比
 
+我们对两个系统进行了对比，对于相同的初始状态，进行了多次对比，得到了下图。
+
+<center>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare3.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare4.png?raw=true" width = "45%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare5.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare6.png?raw=true" width = "45%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图7. 对比实验控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+</center>
+
 我们对实验的最大超调百分比、到达稳态时间，IAE和ISE进行了对比，如下表所示。
 <center>
 
@@ -211,8 +219,12 @@ $$
 |:-----------------:|:--------------:|:--------------:|:-----:|:----:|
 |      经典PID      |     21.12%     |      7.56s      | 1.876 | 6.87 |
 | 模糊控制自适应PID |      6.35%     |      5.11s      | 1.095 | 3.11 |
+<div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">表1. 控制系统性能对比</div>
 </center>
 
+### 实验分析与结论
+
+通过实验对比，我们发现，通过模糊控制器对PID进行自适应调整增益，我们得到了性能更好的PID控制器，对于我们的实验来说，具有较为鲁棒的表现。控制系统的各项指标都达到了要求。由于时间有限，我并没有对规则进行更加细致的调节，因此模糊控制的性能应该还有更大的改进空间。
 
 ## 实验代码
 
