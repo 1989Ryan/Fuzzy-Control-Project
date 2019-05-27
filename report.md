@@ -85,13 +85,13 @@ If:\ e(K)是A_i和\Delta e(k)是B_i,\ then: K_p' 是C_i, K'_i是D_i,\ K'_d是E_i
 $$
 这里的$A_i$, $B_i$, $C_i$, $D_i$, $E_i$是在相应支集上的模糊集合。其隶属度如下图所示
 <center>
-    <img src='./result/membership3.png' width = "40%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/membership3.png?raw=true' width = "40%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图4. 增益的模糊集合隶属度分布</div>
 </center>
 
 $e(k)$和$\Delta e(k)$的隶属函数如下图所示。
 <center>
-    <img src='./result/membership1.png' width = "40%"> <img src="./result/membership2.png" width = "40%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/membership1.png?raw=true' width = "40%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/membership2.png?raw=true" width = "40%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图4. 状态的模糊集合隶属度分布</div>
 </center>
 我们确定了一系列准则，来保证pid控制算法的精确运行。准则可以由以下矩阵进行确定。
@@ -187,7 +187,7 @@ $$
 我们随机设置了倒立摆的初始位置和初始速度进行了十次实验，通过PID控制器实验结果，得到了以下响应曲线。
 
 <center>
-    <img src='./result/PID_result.png' width = "75%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/PID_result.png?raw=true' width = "75%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的经典PID控制结果,横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
@@ -197,7 +197,7 @@ $$
 与经典PID控制器实验一样，我们随机设置初始状态并进行了十次实验，得到了如下响应曲线。
 
 <center>
-    <img src='./result/fuzzy_pid_result.png' width = "75%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/fuzzy_pid_result.png?raw=true' width = "75%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
@@ -543,5 +543,5 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDI2MDA2MTldfQ==
+eyJoaXN0b3J5IjpbODIxMTI2ODE2XX0=
 -->
