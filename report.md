@@ -214,7 +214,7 @@ $$
 
 我们对实验的最大超调百分比、到达稳态时间，IAE和ISE进行了对比，如下表所示。
 
-<center>
+< center>
 
 |       控制器      	| 最大超调百分比 	| 到达稳态时间/s 	|  IAE  	|  ISE 	|
 |:-----------------:	|:--------------:	|:--------------:	|:-----:	|:----:	|
@@ -578,7 +578,7 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIxNzk2ODQ5LDkyNjQ2MTgzNywtNDg2MD
-Y0MzMyLDE2MTk2NjU5NTQsLTEyOTIyMzgwMDIsLTg4MTkxNDEy
-Nyw4MjExMjY4MTZdfQ==
+eyJoaXN0b3J5IjpbMzE4ODA3NTE3LDYyMTc5Njg0OSw5MjY0Nj
+E4MzcsLTQ4NjA2NDMzMiwxNjE5NjY1OTU0LC0xMjkyMjM4MDAy
+LC04ODE5MTQxMjcsODIxMTI2ODE2XX0=
 -->
