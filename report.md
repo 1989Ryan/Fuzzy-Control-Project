@@ -16,7 +16,7 @@
 简单的倒立摆可以由下图来表示。
 
 <center>
-    <img src='倒立摆.jpg' width = "50%"></br>
+    <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/倒立摆.jpg' width = "50%"></br>
     <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">fig1. 倒立摆模型</div>
 </center>
 
@@ -542,3 +542,6 @@ env.close()
 ```
 
 </font>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ3OTYwOTIyOV19
+-->
