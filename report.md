@@ -216,10 +216,10 @@ $$
 
 <center>
 
-|       控制器      | 最大超调百分比 | 到达稳态时间 |  IAE  |  ISE |
-|:-----------------:|:--------------:|:--------------:|:-----:|:----:|
-|      经典PID      |     21.12%     |      7.56s      | 1.876 | 6.87 |
-| 模糊控制自适应PID |      6.35%     |      5.11s      | 1.095 | 3.11 |
+|       控制器      	| 最大超调百分比 	| 到达稳态时间/s 	|  IAE  	|  ISE 	|
+|:-----------------:	|:--------------:	|:--------------:	|:-----:	|:----:	|
+|      经典PID      	|     21.12%     	|      7.56      	| 1.876 	| 6.87 	|
+| 模糊控制自适应PID 	|      6.35%     	|      5.11      	| 1.095 	| 3.11 	|
 </center>
 <center>
 <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">表1. 控制系统性能对比</div>
@@ -578,7 +578,7 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MTgxOTg5OSw5MjY0NjE4MzcsLTQ4Nj
-A2NDMzMiwxNjE5NjY1OTU0LC0xMjkyMjM4MDAyLC04ODE5MTQx
-MjcsODIxMTI2ODE2XX0=
+eyJoaXN0b3J5IjpbNjIxNzk2ODQ5LDkyNjQ2MTgzNywtNDg2MD
+Y0MzMyLDE2MTk2NjU5NTQsLTEyOTIyMzgwMDIsLTg4MTkxNDEy
+Nyw4MjExMjY4MTZdfQ==
 -->
