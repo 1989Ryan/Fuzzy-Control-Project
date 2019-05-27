@@ -1,4 +1,4 @@
-<font face="宋体" size = 12>
+<font face="宋体" size = 2>
 <script type="text/javascript"
        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -199,9 +199,19 @@ $$
 
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/fuzzy_pid_result.png?raw=true' width = "75%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图6. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
 </center>
 
+### 性能对比
+
+我们对实验的最大超调百分比、到达稳态时间，IAE和ISE进行了对比，如下表所示。
+<center>
+
+|       控制器      | 最大超调百分比 | 到达稳态时间 |  IAE  |  ISE |
+|:-----------------:|:--------------:|:--------------:|:-----:|:----:|
+|      经典PID      |     21.12%     |      7.56s      | 1.876 | 6.87 |
+| 模糊控制自适应PID |      6.35%     |      5.11s      | 1.095 | 3.11 |
+</center>
 
 ## 实验代码
 
