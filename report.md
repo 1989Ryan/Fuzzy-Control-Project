@@ -387,8 +387,10 @@ class Fuzzy_PID:
     
     def membership(self, x, tfm):
         x = np.array([x])
-        return [sf.trimf(x, tfm[0]), sf.trimf(x, tfm[1]),sf.trimf(x, tfm[2]),\
-            sf.trimf(x, tfm[3]),sf.trimf(x, tfm[4]),sf.trimf(x, tfm[5]),sf.trimf(x, tfm[6])]
+        return [sf.trimf(x, tfm[0]), sf.trimf(x, tfm[1]),\
+        sf.trimf(x, tfm[2]),sf.trimf(x, tfm[3]),\
+        sf.trimf(x, tfm[4]),sf.trimf(x, tfm[5]),\
+        sf.trimf(x, tfm[6])]
     
     def rule(self):
         return np.matrix([[3,4,5,6,5,4,3],[2,3,4,5,4,3,2],[1,2,3,4,3,2,1],\
@@ -575,7 +577,7 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI2NDYxODM3LC00ODYwNjQzMzIsMTYxOT
-Y2NTk1NCwtMTI5MjIzODAwMiwtODgxOTE0MTI3LDgyMTEyNjgx
-Nl19
+eyJoaXN0b3J5IjpbMTgwMDY5MDI4MSw5MjY0NjE4MzcsLTQ4Nj
+A2NDMzMiwxNjE5NjY1OTU0LC0xMjkyMjM4MDAyLC04ODE5MTQx
+MjcsODIxMTI2ODE2XX0=
 -->
