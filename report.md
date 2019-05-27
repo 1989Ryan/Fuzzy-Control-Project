@@ -204,24 +204,21 @@ $$
 
 ### 性能对比
 
-我们对两个系统进行了对比，对于相同的初始状态，进行了多次对比，得到了下图。
+我们对两个系统进行了对比，对于相同的初始状态，进行了多次对比，得到了下图。其中我们还对其加上了方差为0.5和1的高斯噪声。
 
 <center>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare3.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare4.png?raw=true" width = "45%"></br>
     <img src='https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare5.png?raw=true' width = "45%"> <img src="https://github.com/1989Ryan/Fuzzy-Control-Project/blob/master/result/compare6.png?raw=true" width = "45%"></br>
-    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图7. 对比实验控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图7. 对比实验控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad，其中左下的图片增加了方差为0.5的高斯噪声的控制结果，右下的图片显示的结果为增加了方差为1的高斯噪声的结果</div>
 </center>
 
 我们对实验的最大超调百分比、到达稳态时间，IAE和ISE进行了对比，如下表所示。
-
 <center>
 
-|       控制器      	| 最大超调百分比 	| 到达稳态时间/s 	|  IAE  	|  ISE 	|
-|:-----------------:	|:--------------:	|:--------------:	|:-----:	|:----:	|
-|      经典PID      	|     21.12%     	|      7.56      	| 1.876 	| 6.87 	|
-| 模糊控制自适应PID 	|      6.35%     	|      5.11      	| 1.095 	| 3.11 	|
-</center>
-<center>
+|       控制器      | 最大超调百分比 | 到达稳态时间 |  平均IAE  |  平均ISE |
+|:-----------------:|:--------------:|:--------------:|:-----:|:----:|
+|      经典PID      |     21.12%     |      7.56s      | 1.876 | 6.87 |
+| 模糊控制自适应PID |      6.35%     |      5.11s      | 1.095 | 3.11 |
 <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">表1. 控制系统性能对比</div>
 </center>
 
@@ -388,10 +385,8 @@ class Fuzzy_PID:
     
     def membership(self, x, tfm):
         x = np.array([x])
-        return [sf.trimf(x, tfm[0]), sf.trimf(x, tfm[1]),\
-        sf.trimf(x, tfm[2]),sf.trimf(x, tfm[3]),\
-        sf.trimf(x, tfm[4]),sf.trimf(x, tfm[5]),\
-        sf.trimf(x, tfm[6])]
+        return [sf.trimf(x, tfm[0]), sf.trimf(x, tfm[1]),sf.trimf(x, tfm[2]),\
+            sf.trimf(x, tfm[3]),sf.trimf(x, tfm[4]),sf.trimf(x, tfm[5]),sf.trimf(x, tfm[6])]
     
     def rule(self):
         return np.matrix([[3,4,5,6,5,4,3],[2,3,4,5,4,3,2],[1,2,3,4,3,2,1],\
@@ -578,7 +573,6 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjIxNzk2ODQ5LDkyNjQ2MTgzNywtNDg2MD
-Y0MzMyLDE2MTk2NjU5NTQsLTEyOTIyMzgwMDIsLTg4MTkxNDEy
-Nyw4MjExMjY4MTZdfQ==
+eyJoaXN0b3J5IjpbLTQ4NjA2NDMzMiwxNjE5NjY1OTU0LC0xMj
+kyMjM4MDAyLC04ODE5MTQxMjcsODIxMTI2ODE2XX0=
 -->
