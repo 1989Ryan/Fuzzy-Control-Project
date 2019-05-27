@@ -8,15 +8,16 @@ from src.PID import *
 import math
 
 Ctl = PID()
-Ctl.setKp(8)
-Ctl.setKi(5.8)
-Ctl.setKd(1)
+Ctl.setKp(9.5)
+Ctl.setKi(5.5)
+Ctl.setKd(1.15)
 Ctl.setSampleTime(0.05)
 graph = []
 
 env = gym.make('Pendulum-v0')
 for i_episode in range(10):
     observation = env.reset()
+    Ctl.clear()
     for t in range(300):
         env.render()
         print(observation)

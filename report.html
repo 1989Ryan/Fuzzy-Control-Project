@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<h1 id="center-%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6%E9%A1%B9%E7%9B%AE%E4%BD%9C%E4%B8%9A%E2%80%94%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6-center"><center> 智能控制项目作业—模糊控制 </center></h1>
+<center> 姓名：赵子瑞</br> 班级：自动化钱61 </br> 学号：2160405068 </center>
+<h2 id="%E9%A1%B9%E7%9B%AE%E4%BB%BB%E5%8A%A1">项目任务</h2>
+<ul>
+<li>利用传统PID控制器实现对倒立摆的控制</li>
+<li>利用PID控制器的模糊增益调整来实现倒立摆的自适应控制</li>
+<li>对比试验结果并进行分析</li>
+</ul>
+<h2 id="%E5%80%92%E7%AB%8B%E6%91%86%E6%A8%A1%E5%9E%8B%E5%BB%BA%E7%AB%8B">倒立摆模型建立</h2>
+<p>简单的倒立摆可以由下图来表示。</p>
+<center>
+    <img src='倒立摆.jpg' width = "50%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">fig1. 倒立摆模型</div>
+</center>
+<p>使用前向欧拉方法计算新的角度和角速度来更新观测。
+$$
+\dot{\theta}<em>k = \dot{\theta}</em>{k-1} + \left[ \frac{-3g}{2l} sin(\theta + \pi) + \frac{3T}{ml^2}\right]dt \tag{更新角速度}
+$$
+$$
+\theta_k = \theta_{k-1} + \dot{\theta}_kdt \tag{更新角度}
+$$
+其中$\theta_k$为第$k$次观测中倒立摆的角度，$\dot{\theta}_k$为第$k$次观测中倒立摆的角速度，$T$为施加在倒立摆上的扭矩，$m$为倒立摆的质量，$l$为倒立摆的摆长，$g$为重力加速度。</p>
+<h2 id="%E4%BC%A0%E7%BB%9Fpid%E6%8E%A7%E5%88%B6%E5%99%A8">传统PID控制器</h2>
+<p>简单的传统PID控制器可以用下图来表示。</p>
+<center>
+    <img src='pid_control.png' width = "75%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">fig1. PID流程图</div>
+</center>
+<p>其中，误差可以用下面的公式表示。
+$$
+e(t)= Setting(t) - feedback(t) \tag{误差}
+$$</p>
+<p>利用计算的误差，输入到PID控制器中，得到输出按照如下公式计算。
+$$
+O_{output} = K_p \cdot e(t) + K_i \int_{0}^{t}e(\tau)d\tau + K_d \frac{de(t)}{dt} \tag{PID 输出}
+$$</p>
+<p>我们通过观察倒立摆的两个状态变量——角度和速度，也就是$\theta$和$\dot\theta$来实现对倒立摆的状态的PID控制。因此误差可以表示为：
+$$
+e(t) = \theta_{setting}(t) - \theta_{observed}(t)
+$$
+从而建立起简单的pid模型。</p>
+<h2 id="%E5%88%A9%E7%94%A8%E6%A8%A1%E7%B3%8A%E5%A2%9E%E7%9B%8A%E8%B0%83%E6%95%B4%E5%AE%9E%E7%8E%B0%E8%87%AA%E9%80%82%E5%BA%94pid%E6%8E%A7%E5%88%B6%E5%99%A8">利用模糊增益调整实现自适应PID控制器</h2>
+<h3 id="%E6%A8%A1%E7%B3%8A%E8%87%AA%E9%80%82%E5%BA%94pid%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BB%93%E6%9E%84">模糊自适应PID控制器结构</h3>
+<p>具有模糊增益调整的PID控制器可以由下图的结构来表示。</p>
+<center>
+    <img src='FUZZYPID.png' width = "75%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图3. 具有模糊增益调整的PID控制器</div>
+</center>
+<p>在这里我们设置PID的比例增益$K_p$、积分增益$K_i$和微分增益$K_d$都是可变的，同时需要一个变化范围，为$\left[ K_{pmin}, K_{pmax}\right]$，$\left[K_{imin}, K_{imax}\right]$和$\left[K_{dmin}, K_{dmax}\right]$。注意，这里我并没有使用Ziegler-Nichols 调整规则，因为这样的调整规则会在这里介绍的倒立摆实验中使积分增益$K_i$变得非常大，因此我们采用模糊规则来对积分增益$K_i$进行调整，并且获得了非常好的效果。我会在实验部分给出实验数据进行对比。</p>
+<h3 id="%E6%A8%A1%E7%B3%8A%E8%A7%84%E5%88%99%E4%B8%8E%E6%8E%A8%E7%90%86%E8%BF%87%E7%A8%8B%E5%BB%BA%E7%AB%8B">模糊规则与推理过程建立</h3>
+<p>我们采用归一化参数，如下公式所示：
+$$
+K_p' = \frac{K_p - K_{p,min}}{K_{p,max}-K_{p,min}}
+$$
+$$
+K_i' = \frac{K_i - K_{i,min}}{K_{i,max}-K_{i,min}}
+$$
+$$
+K_d' = \frac{K_d - K_{d,min}}{K_{d,max}-K_{d,min}}
+$$</p>
+<p>参数由模糊规则决定：
+$$
+If:\ e(K)是A_i和\Delta e(k)是B_i,\ then: K_p' 是C_i, K'_i是D_i,\ K'_d是E_i
+$$
+这里的$A_i$, $B_i$, $C_i$, $D_i$, $E_i$是在相应支集上的模糊集合。其隶属度如下图所示</p>
+<center>
+    <img src='./result/membership3.png' width = "40%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图4. 增益的模糊集合隶属度分布</div>
+</center>
+<p>$e(k)$和$\Delta e(k)$的隶属函数如下图所示。</p>
+<center>
+    <img src='./result/membership1.png' width = "40%"> <img src="./result/membership2.png" width = "40%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图4. 状态的模糊集合隶属度分布</div>
+</center>
+我们确定了一系列准则，来保证pid控制算法的精确运行。准则可以由以下矩阵进行确定。
+<p>$$
+\begin{array}{lcc} &amp;
+\begin{array}{c}\Delta e(k)\end{array}\&amp;
+\begin{array}{ccccccc}nb&amp;nm&amp;ns&amp;ze&amp;ps&amp;pm&amp;pb\end{array}\
+\begin{array}{c}e(k)\end{array}
+\begin{array}{c}nb\nm\ns\ze\ps\pm\pb\end{array}&amp;
+\left[\begin{array}{ccccccc}
+\ 3\ &amp;\ 4\ &amp;\ 5\ &amp;\ 6\ &amp;\ 5\ &amp;\ 4\ &amp;\ 3\ \
+2&amp;3&amp;4&amp;5&amp;4&amp;3&amp;2\
+1&amp;2&amp;3&amp;4&amp;3&amp;2&amp;1\
+0&amp;1&amp;2&amp;3&amp;2&amp;1&amp;0\
+1&amp;2&amp;3&amp;4&amp;3&amp;2&amp;1\
+2&amp;3&amp;4&amp;5&amp;4&amp;3&amp;2\
+3&amp;4&amp;5&amp;6&amp;5&amp;4&amp;3
+\end{array}\right]
+\end{array}
+\tag{$K_p'$调整规则}
+$$</p>
+<p>$$
+\begin{array}{lcc} &amp;
+\begin{array}{c}\Delta e(k)\end{array}\&amp;
+\begin{array}{ccccccc}nb&amp;nm&amp;ns&amp;ze&amp;ps&amp;pm&amp;pb\end{array}\
+\begin{array}{c}e(k)\end{array}
+\begin{array}{c}nb\nm\ns\ze\ps\pm\pb\end{array}&amp;
+\left[\begin{array}{ccccccc}
+\ 0\ &amp;\ 0\ &amp;\ 0\ &amp;\ 0\ &amp;\ 0\ &amp;\ 0\ &amp;\ 0\ \
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\
+0&amp;0&amp;2&amp;3&amp;2&amp;0&amp;0\
+0&amp;2&amp;4&amp;2&amp;4&amp;2&amp;0\
+0&amp;0&amp;2&amp;3&amp;2&amp;0&amp;0\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0
+\end{array}\right]
+\end{array}
+\tag{$K_i'$调整规则}
+$$</p>
+<p>$$
+\begin{array}{lcc} &amp;
+\begin{array}{c}\Delta e(k)\end{array}\&amp;
+\begin{array}{ccccccc}nb&amp;nm&amp;ns&amp;ze&amp;ps&amp;pm&amp;pb\end{array}\
+\begin{array}{c}e(k)\end{array}
+\begin{array}{c}nb\nm\ns\ze\ps\pm\pb\end{array}&amp;
+\left[\begin{array}{ccccccc}
+\ 3\ &amp;\ 2\ &amp;\ 1\ &amp;\ 0\ &amp;\ 1\ &amp;\ 2\ &amp;\ 3\ \
+4&amp;3&amp;2&amp;1&amp;2&amp;3&amp;4\
+5&amp;4&amp;3&amp;2&amp;3&amp;4&amp;5\
+6&amp;5&amp;4&amp;3&amp;4&amp;5&amp;6\
+5&amp;4&amp;3&amp;2&amp;3&amp;4&amp;5\
+4&amp;3&amp;2&amp;1&amp;2&amp;3&amp;4\
+3&amp;2&amp;1&amp;0&amp;1&amp;2&amp;3
+\end{array}\right]
+\end{array}
+\tag{$K_d'$调整规则}
+$$
+这样的调整规则是基于经验获得的：</p>
+<ul>
+<li>在$e(k)$较大、$\Delta e(k)$较小的情况下，比例环节的增益应该调大，积分和微分环节调整的较小位置；</li>
+<li>$e(k)$较小、$\Delta e(k)$较大的情况下，比例环节的增益应该调整较小，微分环节增益变大来缓解超调量，同时积分环节的比例调整到中等大小，来提高响应时间；</li>
+<li>$e(k)$较小、$\Delta e(k)$也较小的情况下，采用较大的积分增益和较小的微分、比例增益，减小系统的调节时间。</li>
+</ul>
+<p>通过以上经验，我们获得了上述的矩阵，通过以上的调整规则，我们可以基于状态动态的得到$K_p'$，$K_i'$，$K_d'$。按照下面的公式计算PID的参数。</p>
+<p>$$
+K_p = (K_{p,\max}-K_{p,\min})K_p'+K_{p,\min}\tag{$K_p$计算公式}
+$$
+$$
+K_i = (K_{i,\max}-K_{i,\min})K_i'+K_{i,\min} \tag{$K_i$计算公式}
+$$
+$$
+K_d = (K_{d,\max}-K_{d,\min})K_d'+K_{d,\min} \tag{$K_d$计算公式}
+$$</p>
+<h2 id="%E5%AE%9E%E9%AA%8C">实验</h2>
+<h3 id="%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83">实验环境</h3>
+<ul>
+<li>全部实验基于Python。</li>
+<li>基于OpenAI的实验框架模型Gym，里面包含了很多控制模型，我们选用了里面的pendulum模型进行实验。</li>
+<li>Windows 10 系统环境</li>
+</ul>
+<h3 id="%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">实验内容</h3>
+<p>我们通过python自行设计了传统PID控制系统和基于模糊推理的自适应PID控制器，进行了多次实验的对比和PID参数的调节，得到了以下实验结果。</p>
+<h4 id="pid%E6%8E%A7%E5%88%B6%E5%99%A8%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C">PID控制器实验结果</h4>
+<p>我们随机设置了倒立摆的初始位置和初始速度进行了十次实验，通过PID控制器实验结果，得到了以下响应曲线。</p>
+<center>
+    <img src='./result/PID_result.png' width = "75%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的经典PID控制结果,横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+</center>
+<h4 id="%E5%9F%BA%E4%BA%8E%E6%A8%A1%E7%B3%8A%E5%A2%9E%E7%9B%8A%E8%B0%83%E6%95%B4%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94pid%E6%8E%A7%E5%88%B6%E5%99%A8%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C">基于模糊增益调整的自适应PID控制器实验结果</h4>
+<p>与经典PID控制器实验一样，我们随机设置初始状态并进行了十次实验，得到了如下响应曲线。</p>
+<center>
+    <img src='./result/fuzzy_pid_result.png' width = "75%"></br>
+    <div style="color: orange; border-bottom: 1px solid #d9d9d9; display: inline-block;color: #999; padding: 2dx;">图5. 十次实验的模糊自适应PID控制结果，横坐标为时间，单位为秒，纵坐标为角度，单位是rad</div>
+</center>
+<h2 id="%E5%AE%9E%E9%AA%8C%E4%BB%A3%E7%A0%81">实验代码</h2>
+<p>项目组织框架：</p>
+<pre class="hljs"><code><div>\src                    % 源代码
+    __init__.py         % OOP初始化
+    PID.py              % 经典PID控制器
+    Fuzzy_PID.py        % 基于模糊增益调整的自适应PID控制器
+\scripts                % 执行脚本
+    fuzzy_result.py     % 自适应PID控制器脚本
+    pid_result.py       % 经典PID控制器脚本
+\test                   % 测试脚本
+    gym_tester.py       % gym环境测试脚本  
+</div></code></pre>
+<h3 id="%E7%BB%8F%E5%85%B8pid%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95">经典PID控制算法</h3>
+<pre class="hljs"><code><div><span class="hljs-string">'''
+PID Controler In Python
+Author: Ryan Zirui Zhao
+Email: ryan_zzr@outlook.com
+
+This is a simple PID control algorithm for python, using OOP. 
+'''</span>
+
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PID</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, P = <span class="hljs-number">0.2</span>, I = <span class="hljs-number">0</span>, D = <span class="hljs-number">0</span>)</span>:</span>
+        <span class="hljs-string">'''
+        Initialization.
+        :param P: Proportional Parameter
+        :param I: integral Parameter
+        :param D: Derivative Parameter
+        '''</span>
+        self.Kp, self.Ki, self.Kd = P, I, D
+        self.sample_time = <span class="hljs-number">0.0</span>
+        self.current_time = time.time()
+        self.last_time = self.current_time
+        self.clear()
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clear</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">'''
+        Clear all parameters.
+        '''</span>
+        self.SetPoint = <span class="hljs-number">0.0</span>
+        self.PTerm = <span class="hljs-number">0.0</span>
+        self.ITerm = <span class="hljs-number">0.0</span>
+        self.DTerm = <span class="hljs-number">0.0</span>
+        self.last_error = <span class="hljs-number">0.0</span>
+
+        self.int_error = <span class="hljs-number">0.0</span>
+        self.windup_guard = <span class="hljs-number">15.0</span>
+
+        self.output = <span class="hljs-number">0.0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span><span class="hljs-params">(self, feedback_value)</span>:</span>
+        <span class="hljs-string">'''
+        State Update.
+        :param feedback_value: Current state value
+        '''</span>
+        error = self.SetPoint - feedback_value
+
+        self.current_time = time.time()
+        delta_time = self.current_time - self.last_time
+        delta_error = error - self.last_error
+
+        <span class="hljs-keyword">if</span> (delta_time &gt;= self.sample_time):
+            pTerm = self.Kp * error
+            <span class="hljs-keyword">if</span> (pTerm &lt; -self.windup_guard):
+                self.PTerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (pTerm &gt; self.windup_guard):
+                self.PTerm = self.windup_guard
+            <span class="hljs-keyword">else</span>:
+                self.PTerm = pTerm
+            self.ITerm += self.Ki * error * delta_time
+            <span class="hljs-keyword">if</span> (self.ITerm &lt; -self.windup_guard):
+                self.ITerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (self.ITerm &gt; self.windup_guard):
+                self.ITerm = self.windup_guard
+            <span class="hljs-keyword">if</span> delta_time &gt; <span class="hljs-number">0</span>:
+                self.DTerm = self.Kd * delta_error / delta_time
+            <span class="hljs-keyword">if</span> (self.DTerm &lt; -self.windup_guard):
+                self.DTerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (self.DTerm &gt; self.windup_guard):
+                self.DTerm = self.windup_guard
+            self.last_time = self.current_time
+            self.last_error = error
+
+            Output = self.PTerm + (self.ITerm) + (self.DTerm)
+            <span class="hljs-keyword">if</span> Output &gt; <span class="hljs-number">20</span>:
+                self.output = <span class="hljs-number">20</span>
+            <span class="hljs-keyword">elif</span> Output &lt; <span class="hljs-number">-20</span>:
+                self.output = <span class="hljs-number">-20</span>
+            <span class="hljs-keyword">else</span>:
+                self.output = Output
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKp</span><span class="hljs-params">(self, Proportional_gain)</span>:</span>
+        self.Kp = Proportional_gain
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKi</span><span class="hljs-params">(self, Integral_gain)</span>:</span>
+        self.Ki = Integral_gain
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKd</span><span class="hljs-params">(self, derivative_gain)</span>:</span>
+        self.Kd = derivative_gain
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setSampleTime</span><span class="hljs-params">(self, sample_time)</span>:</span>
+        self.sample_time = sample_time
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setSetPoint</span><span class="hljs-params">(self, setpoint)</span>:</span>
+        self.SetPoint = setpoint
+</div></code></pre>
+<h3 id="%E5%9F%BA%E4%BA%8E%E6%A8%A1%E7%B3%8A%E5%A2%9E%E7%9B%8A%E8%B0%83%E6%95%B4%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94pid%E6%8E%A7%E5%88%B6%E5%99%A8">基于模糊增益调整的自适应PID控制器</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> skfuzzy <span class="hljs-keyword">as</span> sf
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> pi, log
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fuzzy_PID</span>:</span>
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, Pmax, Pmin, Imax, Imin, Dmax, Dmin)</span>:</span>
+        self.Kpmax = Pmax
+        self.Kpmin = Pmin
+        self.Kimax = Imax
+        self.Kimin = Imin
+        self.Kdmax = Dmax
+        self.Kdmin = Dmin
+        self.sample_time = <span class="hljs-number">0.0</span>
+        self.current_time = time.time()
+        self.last_time = self.current_time
+        self.tfm = self.tfm_generator(-pi, pi)
+        self.dtfm = self.tfm_generator(<span class="hljs-number">-8</span>,<span class="hljs-number">8</span>)
+        self.re = self.rule()
+        self.rde = self.re.T
+        self.rie = self.rule_ki()
+        self.a = self.rule_alpha()
+        self.b = self.a.T
+        self.clear()
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tfm_generator</span><span class="hljs-params">(self, xmin, xmax)</span>:</span>
+        x = (xmax - xmin)/<span class="hljs-number">2</span>
+
+        NB = np.array([xmin, xmin, xmin+<span class="hljs-number">1</span>/<span class="hljs-number">3</span>*x], dtype = np.float)
+        NM = np.array([xmin, xmin+<span class="hljs-number">1</span>/<span class="hljs-number">3</span>*x, xmin+<span class="hljs-number">2</span>/<span class="hljs-number">3</span>*x], dtype = np.float)
+        NS = np.array([xmin+<span class="hljs-number">1</span>/<span class="hljs-number">3</span>*x, xmin+<span class="hljs-number">2</span>/<span class="hljs-number">3</span>*x, xmin+x], dtype = np.float)
+        ZE = np.array([xmin+<span class="hljs-number">2</span>/<span class="hljs-number">3</span>*x, xmin+x, xmax - <span class="hljs-number">2</span>/<span class="hljs-number">3</span>*x], dtype = np.float)
+        PS = np.array([xmin+x, xmax<span class="hljs-number">-2</span>/<span class="hljs-number">3</span>*x, xmax-x/<span class="hljs-number">3</span>], dtype = np.float)
+        PM = np.array([xmax<span class="hljs-number">-2</span>/<span class="hljs-number">3</span>*x, xmax-x/<span class="hljs-number">3</span>, xmax], dtype = np.float)
+        PB = np.array([xmax - <span class="hljs-number">1</span>/<span class="hljs-number">3</span>*x, xmax, xmax], dtype = np.float)
+
+        <span class="hljs-keyword">return</span> [NB, NM, NS, ZE, PS, PM, PB]
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">membership</span><span class="hljs-params">(self, x, tfm)</span>:</span>
+        x = np.array([x])
+        <span class="hljs-keyword">return</span> [sf.trimf(x, tfm[<span class="hljs-number">0</span>]), sf.trimf(x, tfm[<span class="hljs-number">1</span>]),sf.trimf(x, tfm[<span class="hljs-number">2</span>]),\
+            sf.trimf(x, tfm[<span class="hljs-number">3</span>]),sf.trimf(x, tfm[<span class="hljs-number">4</span>]),sf.trimf(x, tfm[<span class="hljs-number">5</span>]),sf.trimf(x, tfm[<span class="hljs-number">6</span>])]
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rule</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> np.matrix([[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>],\
+            [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]])
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rule_alpha</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> np.matrix([[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],\
+            [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]])
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rule_ki</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> np.matrix([[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],\
+            [<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]])
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clear</span><span class="hljs-params">(self)</span>:</span>
+        self.SetPoint = <span class="hljs-number">0.0</span>
+        self.PTerm = <span class="hljs-number">0.0</span>
+        self.ITerm = <span class="hljs-number">0.0</span>
+        self.DTerm = <span class="hljs-number">0.0</span>
+        self.last_error = <span class="hljs-number">0.0</span>
+        self.int_error = <span class="hljs-number">0.0</span>
+        self.windup_guard = <span class="hljs-number">10.0</span>
+        self.output = <span class="hljs-number">0.0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_K</span><span class="hljs-params">(self, error, d_error)</span>:</span>
+        self.Kp = self.re[np.argmax(self.membership(error,self.tfm)),\
+            np.argmax(self.membership(d_error, self.dtfm))]/<span class="hljs-number">6</span> *(self.Kpmax-self.Kpmin)+self.Kpmin
+        self.Kd = self.rde[np.argmax(self.membership(error, self.tfm)),\
+            np.argmax(self.membership(d_error, self.dtfm))]/<span class="hljs-number">6</span> *(self.Kdmax-self.Kdmin)+self.Kdmin
+        self.alpha = self.a[np.argmax(self.membership(error, self.tfm)),\
+            np.argmax(self.membership(d_error, self.dtfm))]
+        self.Ki = self.rie[np.argmax(self.membership(error, self.tfm)),\
+            np.argmax(self.membership(d_error, self.dtfm))]/<span class="hljs-number">4</span> *(self.Kimax - self.Kimin)+self.Kimin
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span><span class="hljs-params">(self, feedback_value, speed)</span>:</span>
+        error = self.SetPoint - feedback_value
+        
+        self.current_time = time.time()
+        delta_time = self.current_time - self.last_time
+        delta_error = error - self.last_error
+        d_error = speed
+        self.update_K(error, d_error)
+
+        <span class="hljs-keyword">if</span> (delta_time &gt;= self.sample_time):
+            pTerm = self.Kp * error
+            <span class="hljs-keyword">if</span> (pTerm &lt; -self.windup_guard):
+                self.PTerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (pTerm &gt; self.windup_guard):
+                self.PTerm = self.windup_guard
+            <span class="hljs-keyword">else</span>:
+                self.PTerm = pTerm
+            self.ITerm += self.Ki * error * delta_time
+            <span class="hljs-keyword">if</span> (self.ITerm &lt; -self.windup_guard):
+                self.ITerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (self.ITerm &gt; self.windup_guard):
+                self.ITerm = self.windup_guard
+            <span class="hljs-keyword">if</span> delta_time &gt; <span class="hljs-number">0</span>:
+                self.DTerm = self.Kd * delta_error / delta_time
+            <span class="hljs-keyword">if</span> (self.DTerm &lt; -self.windup_guard):
+                self.DTerm = -self.windup_guard
+            <span class="hljs-keyword">elif</span> (self.DTerm &gt; self.windup_guard):
+                self.DTerm = self.windup_guard
+            self.last_time = self.current_time
+            self.last_error = error
+
+            Output = self.PTerm + (self.ITerm) + (self.DTerm)
+            <span class="hljs-keyword">if</span> Output &gt; <span class="hljs-number">15</span>:
+                self.output = <span class="hljs-number">15</span>
+            <span class="hljs-keyword">elif</span> Output &lt; <span class="hljs-number">-15</span>:
+                self.output = <span class="hljs-number">-15</span>
+            <span class="hljs-keyword">else</span>:
+                self.output = Output
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKp</span><span class="hljs-params">(self, Pmax, Pmin)</span>:</span>
+        self.Kpmax = Pmax
+        self.Kpmin = Pmin
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKd</span><span class="hljs-params">(self, Dmax, Dmin)</span>:</span>
+        self.Kdmax = Dmax
+        self.Kdmin = Dmin
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setKi</span><span class="hljs-params">(self, Imax, Imin)</span>:</span>
+        self.Kimax = Imax
+        self.Kimin = Imin
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setSampleTime</span><span class="hljs-params">(self, sample_time)</span>:</span>
+        self.sample_time = sample_time
+    
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setSetPoint</span><span class="hljs-params">(self, setpoint)</span>:</span>
+        self.SetPoint = setpoint
+
+</div></code></pre>
+<h3 id="%E7%BB%8F%E5%85%B8pid%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC">经典PID运行脚本</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> skfuzzy
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+lib_path = os.path.abspath(os.path.join(sys.path[<span class="hljs-number">0</span>], <span class="hljs-string">'..'</span>))
+sys.path.append(lib_path)
+<span class="hljs-keyword">import</span> gym
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> src.Fuzzy_PID <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">import</span> math
+
+Ctl = Fuzzy_PID(<span class="hljs-number">10</span>,<span class="hljs-number">7</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1.15</span>, <span class="hljs-number">0.75</span>)
+Ctl.setKp(<span class="hljs-number">10</span>,<span class="hljs-number">3</span>)
+Ctl.setKi(<span class="hljs-number">9</span>,<span class="hljs-number">0</span>)
+Ctl.setKd(<span class="hljs-number">0.9</span>,<span class="hljs-number">0.3</span>)
+Ctl.setSampleTime(<span class="hljs-number">0.05</span>)
+Ctl.setSetPoint(<span class="hljs-number">1.1</span>)
+graph = []
+
+env = gym.make(<span class="hljs-string">'Pendulum-v0'</span>)
+<span class="hljs-keyword">for</span> i_episode <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+    observation = env.reset()
+    Ctl.clear()
+    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(<span class="hljs-number">300</span>):
+        env.render()
+        feedback, thbot = env.state
+        graph.append(feedback)
+        Ctl.update(feedback, thbot)
+        action = [Ctl.output]
+        print(action)
+        print(Ctl.PTerm, Ctl.ITerm,Ctl.DTerm)
+        observation, reward, done, info = env.step(action)
+    plt.plot(graph[::<span class="hljs-number">10</span>], <span class="hljs-string">"^-"</span>)
+    graph = []
+plt.title(<span class="hljs-string">"Fuzzy PID performance"</span>)
+string = <span class="hljs-string">"../result/"</span>+str(time.time())+<span class="hljs-string">"Fuzzy_graph.png"</span>
+plt.savefig(string)
+env.close() 
+</div></code></pre>
+<h3 id="%E6%A8%A1%E7%B3%8A%E8%87%AA%E9%80%82%E5%BA%94pid%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC">模糊自适应PID运行脚本</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+lib_path = os.path.abspath(os.path.join(sys.path[<span class="hljs-number">0</span>], <span class="hljs-string">'..'</span>))
+sys.path.append(lib_path)
+<span class="hljs-keyword">import</span> gym
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> src.PID <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">import</span> math
+<span class="hljs-keyword">import</span> time
+
+Ctl = PID()
+Ctl.setKp(<span class="hljs-number">9</span>)
+Ctl.setKi(<span class="hljs-number">4</span>)
+Ctl.setKd(<span class="hljs-number">0.85</span>)
+Ctl.setSampleTime(<span class="hljs-number">0.05</span>)
+graph = []
+
+env = gym.make(<span class="hljs-string">'Pendulum-v0'</span>)
+<span class="hljs-keyword">for</span> i_episode <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+    observation = env.reset()
+    Ctl.clear()
+    <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(<span class="hljs-number">300</span>):
+        env.render()
+        print(observation)
+        feedback, thbot = env.state
+        graph.append(feedback)
+        print(feedback)
+        Ctl.update(feedback)
+        action = [Ctl.output]
+        print(action)
+        print(Ctl.PTerm, Ctl.ITerm,Ctl.DTerm)
+        observation, reward, done, info = env.step(action)
+    plt.plot(graph[::<span class="hljs-number">10</span>], <span class="hljs-string">"^-"</span>)
+    graph = []
+plt.title(<span class="hljs-string">"PID performance"</span>)
+string = <span class="hljs-string">"../result/"</span>+str(time.time())+<span class="hljs-string">"PIDgraph.png"</span>
+plt.savefig(string)
+env.close()
+</div></code></pre>
+</font>
+</body>
+</html>

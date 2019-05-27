@@ -23,4 +23,8 @@ Classic PID Controler and Fuzzy PID controler.
 LICENSE
 README.md
 .gitignore
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> d455680d43724d4bbf887f9ef0d718c30a1fb395
