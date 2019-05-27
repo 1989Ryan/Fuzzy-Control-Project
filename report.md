@@ -1,4 +1,4 @@
-<font face="宋体">
+<font face="宋体" size = 12:>
 <script type="text/javascript"
        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -544,5 +544,6 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MTkxNDEyNyw4MjExMjY4MTZdfQ==
+eyJoaXN0b3J5IjpbLTk4MzM3OTgxMiwtODgxOTE0MTI3LDgyMT
+EyNjgxNl19
 -->
