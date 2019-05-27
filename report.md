@@ -367,15 +367,18 @@ class Fuzzy_PID:
     
     def rule(self):
         return np.matrix([[3,4,5,6,5,4,3],[2,3,4,5,4,3,2],[1,2,3,4,3,2,1],\
-            [0,1,2,3,2,1,0],[1,2,3,4,3,2,1],[2,3,4,5,4,3,2],[3,4,5,6,5,4,3]])
+            [0,1,2,3,2,1,0],[1,2,3,4,3,2,1],[2,3,4,5,4,3,2],\
+            [3,4,5,6,5,4,3]])
     
     def rule_alpha(self):
         return np.matrix([[2,2,2,2,2,2,2],[3,3,2,2,2,3,3],[4,3,3,2,3,3,4],\
-            [5,4,3,3,3,4,5],[4,3,3,2,3,3,4],[3,3,2,2,2,3,3],[2,2,2,2,2,2,2]])
+            [5,4,3,3,3,4,5],[4,3,3,2,3,3,4],[3,3,2,2,2,3,3],\
+		    [2,2,2,2,2,2,2]])
 
     def rule_ki(self):
         return np.matrix([[0,0,0,0,0,0,0],[0,0,0,1,0,0,0],[0,0,2,2,2,0,0],\
-            [0,2,4,2,4,2,0],[0,0,2,2,2,0,0],[0,0,0,1,0,0,0],[0,0,0,0,0,0,0]])
+            [0,2,4,2,4,2,0],[0,0,2,2,2,0,0],[0,0,0,1,0,0,0],\
+            [0,0,0,0,0,0,0]])
 
     def clear(self):
         self.SetPoint = 0.0
@@ -389,13 +392,16 @@ class Fuzzy_PID:
 
     def update_K(self, error, d_error):
         self.Kp = self.re[np.argmax(self.membership(error,self.tfm)),\
-            np.argmax(self.membership(d_error, self.dtfm))]/6 *(self.Kpmax-self.Kpmin)+self.Kpmin
+            np.argmax(self.membership(d_error, self.dtfm))]/6 *\
+            (self.Kpmax-self.Kpmin)+self.Kpmin
         self.Kd = self.rde[np.argmax(self.membership(error, self.tfm)),\
-            np.argmax(self.membership(d_error, self.dtfm))]/6 *(self.Kdmax-self.Kdmin)+self.Kdmin
+            np.argmax(self.membership(d_error, self.dtfm))]/6 *\
+            (self.Kdmax-self.Kdmin)+self.Kdmin
         self.alpha = self.a[np.argmax(self.membership(error, self.tfm)),\
             np.argmax(self.membership(d_error, self.dtfm))]
         self.Ki = self.rie[np.argmax(self.membership(error, self.tfm)),\
-            np.argmax(self.membership(d_error, self.dtfm))]/4 *(self.Kimax - self.Kimin)+self.Kimin
+            np.argmax(self.membership(d_error, self.dtfm))]/4 *\
+            (self.Kimax - self.Kimin)+self.Kimin
 
     def update(self, feedback_value, speed):
         error = self.SetPoint - feedback_value
@@ -544,6 +550,6 @@ env.close()
 
 </font>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTIyMzgwMDIsLTg4MTkxNDEyNyw4Mj
-ExMjY4MTZdfQ==
+eyJoaXN0b3J5IjpbMTYxOTY2NTk1NCwtMTI5MjIzODAwMiwtOD
+gxOTE0MTI3LDgyMTEyNjgxNl19
 -->
